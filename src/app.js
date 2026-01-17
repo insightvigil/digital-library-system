@@ -4,6 +4,7 @@ import cors from 'cors';
 
 //Routers
 import booksRouter from './routes/books/books.routes.js';
+import categoriesRouter from './routes/categories/categories.router.js'
 
 
 
@@ -12,6 +13,7 @@ app.use(cors({origin: 'http://localhost:3000'}));
 app.use(express.json());
 
 app.use('/books', booksRouter);
+app.use('/categories', categoriesRouter);
 
 
 export default app;
