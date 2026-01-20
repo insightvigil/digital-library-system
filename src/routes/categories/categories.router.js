@@ -2,14 +2,14 @@ import express from 'express';
 
 
 //Functions
-import { httpCreateCategory, httpGetAllCategories, httpGetCategory, httpUpdateCategory, httpDeleteCategory } from './categories.controller.js';
+import { httpCreateCategory, httpGetCategories, httpGetCategory, httpUpdateCategory, httpDeleteCategory } from './categories.controller.js';
 const router = express.Router();
 
 //Create
 router.post('/category', httpCreateCategory);
 
 //Read
-router.get('/', httpGetAllCategories );
+router.get('/', httpGetCategories );
 
 router.get('/category/:id', httpGetCategory);
 

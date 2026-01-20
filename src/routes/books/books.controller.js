@@ -2,12 +2,16 @@
 
 //Create
 export const httpCreateBook = (request,response)=> {
-    response.send("Hello There!, You can create books here");
+    response.status(200).send("Hello There!, You can create books here");
 }
 
 //Read
 export const httpGetBooks = (request,response)=> { 
     response.send("Hello this is the page for Books.");
+}
+
+export const httpGetBook = (request,response)=> {
+    response.send("Hello there! You can see a book here.");
 }
 
 //Update

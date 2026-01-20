@@ -6,7 +6,7 @@ export const httpCreateCategory = (request, response) => {
 }
 
 //Read Categories
-export const httpGetAllCategories = (request,response)=> {
+export const httpGetCategories = (request,response)=> {
     response.send('Aquí puedes consultar todas las categorias');
 }
 
