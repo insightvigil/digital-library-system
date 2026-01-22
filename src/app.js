@@ -6,9 +6,14 @@ import cors from 'cors';
 import booksRouter from './routes/books/books.routes.js';
 import categoriesRouter from './routes/categories/categories.router.js'
 
+//Pool
+import { pool } from './db/pool.js';
+
 
 
 const app = express();
+
+
 app.use(cors({origin: 'http://localhost:3000'}));
 app.use(express.json());
 
