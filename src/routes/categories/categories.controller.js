@@ -1,3 +1,6 @@
+//Models
+import { getCategories,getCategory } from "../../models/categories.model.js";
+
 //CRUD
 
 //Create Category
@@ -6,13 +9,17 @@ export const httpCreateCategory = (request, response) => {
 }
 
 //Read Categories
-export const httpGetCategories = (request,response)=> {
-    response.send('Aquí puedes consultar todas las categorias');
+export const httpGetCategories = async (request,response)=> {
+    response.send(await getCategories());
 }
 
 //Read Category
-export const httpGetCategory = (request,response)=> {
-        response.send('Aquí puedes consultar 1 categoria');
+export const httpGetCategory = async (request,response)=> {
+    //Extract the parameter id from the URL
+    const {id} = request.params;
+    const categoryId = Number(id);
+
+    response.status(200).send(await getCategory(categoryId));
 }
 
 //Update Category

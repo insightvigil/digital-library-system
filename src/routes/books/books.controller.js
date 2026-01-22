@@ -1,3 +1,5 @@
+//Models
+import { getBooks,getBook } from "../../models/books.model.js";
 //CRUD
 
 //Create
@@ -6,12 +8,15 @@ export const httpCreateBook = (request,response)=> {
 }
 
 //Read
-export const httpGetBooks = (request,response)=> { 
-    response.send("Hello this is the page for Books.");
+export const httpGetBooks = async (request,response) => { 
+    response.status(200).send(await getBooks());
 }
 
-export const httpGetBook = (request,response)=> {
-    response.send("Hello there! You can see a book here.");
+export const httpGetBook = async (request,response)=> {
+    const {id} = request.params;
+    //Transform the string into number
+    const bookid = Number(id);
+    response.status(200).send(await getBook(bookid));
 }
 
 //Update
