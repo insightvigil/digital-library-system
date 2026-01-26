@@ -13,6 +13,8 @@ router.get('/', httpGetCategories );
 
 router.get('/category/:id', httpGetCategory);
 
+
+
 //Update
 router.put('/category/:id', httpUpdateCategory);
 

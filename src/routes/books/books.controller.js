@@ -1,5 +1,6 @@
 //Models
-import { getBooks,getBook,createBook} from "../../models/books.model.js";
+import { response } from "express";
+import { getBooks,getBook,createBook, getBooksGrid} from "../../models/books.model.js";
 //CRUD
 
 //Create
@@ -34,6 +35,14 @@ export const httpUpdateBook = (request,response) => {
 }
 
 //Delete
-export const httpDeleteBook = (reques,response)=> {
+export const httpDeleteBook = (request,response)=> {
     response.send("Hello There!, You can delete books here");
+}
+
+
+//Extras
+
+export const httpGetBooksGrid = async (request, response) => {
+    const {id} = request.params;
+    response.status(200).json(await getBooksGrid(id));
 }

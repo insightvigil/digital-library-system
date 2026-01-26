@@ -2,14 +2,14 @@ import {Pool} from 'pg';
 
 //We create the pool
 export const pool = new Pool({
-    user: 'postgres',
-    password: 'toor',
-    host: '192.168.0.159',
-    port: 5432, 
-    database: 'biblioteca',
-    max: 10,
-    idleTimeoutMillis: 30000,
-    connectionTimeoutMillis: 2000,
+    user: process.env.PGUSER,
+    password: process.env.PGPASSWORD,
+    host: process.env.PGHOST,
+    port: process.env.PGPORT, 
+    database: process.env.PGDATABASE,
+    max: process.env.PGPOOL_MAX,
+    idleTimeoutMillis: process.env.PGIDLE_TIMEOUT,
+    connectionTimeoutMillis: process.env.PGCONNECTION_TIMEOUT,
 })
 
 

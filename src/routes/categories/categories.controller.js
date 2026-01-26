@@ -1,5 +1,5 @@
 //Models
-import { createCategory, getCategories,getCategory } from "../../models/categories.model.js";
+import { createCategory, getCategories,getCategory} from "../../models/categories.model.js";
 
 //CRUD
 
@@ -18,7 +18,8 @@ export const httpCreateCategory = async (request, response) => {
 
 //Read Categories
 export const httpGetCategories = async (request,response)=> {
-    response.send(await getCategories());
+    const limit = Number(request.query.limit);
+    response.send(await getCategories(limit));
 }
 
 //Read Category
@@ -30,6 +31,8 @@ export const httpGetCategory = async (request,response)=> {
     response.status(200).send(await getCategory(categoryId));
 }
 
+
+
 //Update Category
 export const httpUpdateCategory = (request,response)=> {
     response.send('Aquí puedes actualizar los datos de una categoria');
@@ -39,3 +42,4 @@ export const httpUpdateCategory = (request,response)=> {
 export const httpDeleteCategory = (request,response)=> {
     response.send('Aquí puedes eliminar una categoría');
 }
+

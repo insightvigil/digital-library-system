@@ -10,10 +10,15 @@ export async function createCategory(category){
     
 }
 
-export async function getCategories(){
-    const response = await pool.query('SELECT * FROM categories');
-
-    return response.rows
+export async function getCategories(limit){
+    if(!limit){
+        const response = await pool.query('SELECT id AS category_id, name as category_name, description FROM categories ORDER BY name ASC');
+        return response.rows;
+    } else {
+        const response = await pool.query('SELECT id AS category_id, name as category_name, description FROM categories ORDER BY name ASC LIMIT $1', [limit]);
+        return response.rows;
+        
+    }
 } 
 
 export async function getCategory(id){
@@ -21,3 +26,6 @@ export async function getCategory(id){
     
     return response.rows;
 }
+
+//Extras
+
