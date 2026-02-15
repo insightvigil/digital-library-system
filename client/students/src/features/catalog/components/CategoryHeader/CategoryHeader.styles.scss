@@ -1,0 +1,14 @@
+@use '../../../../styles/abstracts/variables' as *;
+
+
+.category-header__container {
+    display: flex;
+    justify-content: center;
+    color: $text-primary-color;
+    
+    .categoryshelfheader-description{
+        margin-bottom: 12px;
+    }
+
+    
+}

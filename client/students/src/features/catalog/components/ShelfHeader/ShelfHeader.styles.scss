@@ -1,0 +1,18 @@
+.shelfheader-container {
+    width:100%;
+    
+    display: flex;
+    align-items: center;
+    color: whitesmoke;
+
+.shelfheader-link{
+    margin-left: auto;
+    
+    a {
+        color: whitesmoke;
+    &:hover {
+        color:  lightgray;
+    }
+    } 
+    }
+}

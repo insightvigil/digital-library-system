@@ -1,0 +1,8 @@
+.books-by-category__container{
+    width: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    min-height: 80vh;
+    padding: 24px;
+    
+}

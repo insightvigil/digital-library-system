@@ -1,6 +1,6 @@
 //Models
-import { response } from "express";
-import { getBooks,getBook,createBook, getBooksGrid} from "../../models/books.model.js";
+import { request, response } from "express";
+import { getBooks,getBook,createBook, getBooksGrid, getBooksByCategory} from "../../models/books.model.js";
 //CRUD
 
 //Create
@@ -27,6 +27,14 @@ export const httpGetBook = async (request,response)=> {
     //Transform the string into number
     const bookid = Number(id);
     response.status(200).send(await getBook(bookid));
+}
+
+export const httpGetBooksByCategory = async (request, response) => {
+    const {id} = request.params;
+
+    //Transform id to number
+    const category_id = Number(id);
+    response.status(200).send(await getBooksByCategory(category_id));
 }
 
 //Update

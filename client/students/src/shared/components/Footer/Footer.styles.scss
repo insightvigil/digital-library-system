@@ -1,0 +1,40 @@
+@use '../../../styles/abstracts/variables' as *;
+//@use '../../../scss/reset.scss';
+
+footer {
+    width: 100%;
+    margin-top: auto;
+
+    text-align: center;
+    color: $text-primary-color;
+
+    background: $bg-secondary-color;
+    backdrop-filter: blur(8px);
+    
+    &:hover {
+        user-select: none;
+    }
+
+    figure {
+        height: 20px;
+        img{
+            height: 30px;
+            width: 30px;
+            object-fit: cover;
+            &:hover{
+            cursor: pointer;
+            }
+        }
+    }
+
+    .brand-profile {
+        font-size: .9rem;
+        display: block;
+        
+        a {
+            color: $text-primary-color;
+            text-decoration: none;
+        }
+    }
+
+}

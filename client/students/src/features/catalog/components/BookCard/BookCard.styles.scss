@@ -1,0 +1,104 @@
+@use '/src/styles/abstracts/variables' as *;
+.book-card__container {
+    width: 220px;
+    aspect-ratio: 2 / 3; 
+    padding: 10px;
+
+
+    display: grid;
+    justify-items: center;
+    align-items: start;
+    gap: 10px;
+
+    border: 1px solid #e3e3e3;
+    border-left: 4px solid #e3e3e3;
+    border-radius: 10px;
+
+    transition: all 0.3s ease;
+
+    &:hover{
+        transform: scale(1.05);
+        box-shadow: 0 10px 20px rgb(11, 15, 20, 0.2);
+        cursor: pointer;
+    }
+    
+    .book{
+        width: 100%;
+        margin: 0;
+
+        display: grid;
+        grid-template-rows: auto 1fr; // imagen + meta (meta “llena” y alinea)
+        gap: 10px;
+
+        //Portada
+        .book__img{
+            display: block;
+            
+            width: 100%;
+            aspect-ratio: 2/3;
+            object-fit: cover;
+
+            border: 1px rgba(245, 245, 245, 0.4) solid;
+            border-radius: 8px;
+
+            
+        }
+
+        .book__meta{
+            width: 100%;
+            min-height: 0;
+            
+
+            display: grid;
+            gap: 6px;
+
+            text-align: center;
+            color: $text-primary-color;
+            
+            .title, .author {
+                width: 100%;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+
+
+            .title {
+                font-weight: 600;
+                line-height: 1.2;
+                -webkit-line-clamp: 1; // máximo 2 líneas
+                line-clamp: 1;
+            }
+
+            .author {
+                font-size: 1.4rem;
+                opacity: 0.75;
+                -webkit-line-clamp: 1; // máximo 1 línea
+                line-clamp: 1;
+            }
+            .available {
+                color: green;
+                font-weight: bold;
+                font-style: italic;
+                    }
+
+            .unavailable{
+                color: darkred;
+                font-weight: bold;
+                font-style: italic;
+                }
+
+        
+    }
+
+    }
+    
+
+    
+    
+    
+    
+
+    }
+
+

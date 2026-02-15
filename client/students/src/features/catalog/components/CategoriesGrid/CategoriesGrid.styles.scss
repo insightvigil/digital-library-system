@@ -1,0 +1,36 @@
+@use '/src/styles/abstracts/variables' as *;
+
+
+.categories-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    width: 100%;
+    margin-top: 24px;
+    
+
+    .categories-wrapper {
+        width: 100%;
+
+        display: flex;
+        justify-content: space-between;   
+        align-items: center;
+
+        margin: 0 12px;
+    }
+
+    .nav-btn {
+        color: $text-primary-color;
+        font-size: 2.4rem;
+        background-color: $black;
+        padding: 2px;
+
+        border-radius: 8px;
+
+        border: 1px solid rgba($color: $text-primary-color, $alpha: 0.3);
+        
+    }
+
+    
+}
